@@ -1,0 +1,17 @@
+<article class = "lleft">
+<h1><%= @category.title %></h1>
+
+<% @post.each do |post|%>
+
+     <p><span class = "post-title"><%= link_to post.title, post%></span></p>
+
+
+     <% if post.image.file? %>
+          <p><%= image_tag post.image.url(:thumb), :class => "img-fl" %></p>
+     <%end%>
+ 
+     <p class = "postts"><%= markdown(post.body) %></p><br/> <hr/>
+
+<%end%> 
+</article>
+

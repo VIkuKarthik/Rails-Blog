@@ -1,0 +1,31 @@
+<article class = "lleft">
+<div class ="pos-pad">
+   <span class = "post-title"><%= @post.title %></span> <small><%= @post.created_at.strftime("%b %d, %Y") %> </small>
+   <p><small>Category : <strong><%=@post.category.title %></strong></small></p>
+    <%if @post.image.file? %>
+        <%= image_tag @post.image.url(:medium), :class => "img-sh" %>
+    <%end%>
+    <div class = "postts">
+        <p><%= markdown(@post.body)%></p>
+    </div>
+            
+    <%if user_signed_in? %>
+        <%if @post.user == current_user %>
+             <%= link_to 'Edit', edit_post_path(@post), :class => "ln lgr" %> |
+             <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, :class => "ln ree" %>
+        <%end%>
+    <%end%>
+</div><br/>
+
+<hr/>
+    <div class ="cs">
+        <h4><%= @post.comments.count %> Comments</h4>
+		<%= render partial: "comments/comment" %>
+    </div>
+    
+    <div class = "comment">
+        <p><strong>Add a Comment</strong></p>
+        <%= render partial: "comments/form" %>
+    </div>
+    
+</article>

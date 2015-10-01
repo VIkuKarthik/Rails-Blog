@@ -1,0 +1,13 @@
+<div id="new-pos">
+	
+	<h1>New Post</h1>
+	
+	<%= form_for(:post, :url => {:action => 'create'}, html: { multipart: true }) do |f| %>
+	
+		<%= render(:partial => "form", :locals => {:f => f}) %>
+		
+		<%= submit_tag("Create Post") %>
+		
+	<% end %>
+	
+</div>

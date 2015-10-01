@@ -1,0 +1,14 @@
+<div class = "cmm">
+    
+<% @post.comments.each do |comment| %>
+    <p class="comment_name">Name :<strong><%= (comment.user.user_name if comment.user) || "Anonymous" %></strong></p>
+    <p class="comment_body"><%= comment.body %></p>
+    <p class="comment_time"><small><em><%= time_ago_in_words(comment.created_at) %> Ago</em></small></p>
+    <p><%= link_to 'Delete', [comment.post, comment],
+                    method: :delete, data: {confirm: 'Are you sure?'}, :class => "ln ree" %></p>    
+    <hr/>
+    
+<%end%>
+
+</div>
+

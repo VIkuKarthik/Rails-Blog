@@ -1,0 +1,13 @@
+<div class = "comment">
+
+    <%= form_for [@post, @post.comments.build] do |f| %>
+    
+        
+        <%= f.label :body, "Comment:" %><br>
+        <%= f.text_area(:body, :size => "40x5")%><br/>
+        <br/>
+        <%=submit_tag("submit")%>
+    <%end%>
+       
+    
+</div>

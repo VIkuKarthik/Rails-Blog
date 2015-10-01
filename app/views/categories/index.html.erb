@@ -1,0 +1,6 @@
+<h1>Categories</h1>
+<% @category.each do |cat|%>
+    <ul>
+        <li> <%= link_to cat.title, {:action => 'show', :id => cat.id} %> </li>
+    </ul>
+<%end%>

@@ -1,0 +1,14 @@
+<div class="lleft">
+    
+	<h1>Edit Post</h1>
+	
+	<%= form_for(@post, :url => {:controller => 'posts', :action => 'update'}, html: { multipart: true }) do |f| %>
+	
+		<%= render(:partial => "form", :locals => {:f => f}) %>
+	
+
+		<%= submit_tag("Update Subject") %>
+	
+	<% end %>
+	
+</div>  

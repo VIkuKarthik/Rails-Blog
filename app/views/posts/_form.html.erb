@@ -1,0 +1,39 @@
+<% if @post.errors.any? %>
+	<div class="errors">
+	<h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
+	   	<ul>
+			<% @post.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+
+
+    <%= f.label(:title) %><br>
+    
+    <%= f.text_field(:title, :size => "40x0", :class => 'postts') %><br> 
+    <br>
+    
+    <%= f.label(:image) %><br>
+    
+    <%= f.file_field(:image) %><small>(optional)</small><br> 
+    <br>
+    
+    <%= f.label(:category_id, "Category") %><br/>
+    
+    
+    <%= f.collection_select :category_id, Category.all, :id, :title, :prompt => 'Select One' %>
+   </br>
+    
+    
+    
+    <br/>
+    
+    <%= f.label(:body) %><br>
+    
+    <%= f.text_area(:body, :size => "80x12", :class => 'postts') %><br>
+    <br>
+
+	

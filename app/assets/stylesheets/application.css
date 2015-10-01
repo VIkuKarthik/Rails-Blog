@@ -1,0 +1,400 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'normalize';
+
+html, body{
+		font-family: 'Iceberg', cursive;
+	}  
+	
+.postts{
+    font-family: 'Roboto', sans-serif;
+    line-height:1.3em;
+    font-style:normal;
+}
+
+.pos-pad{
+	padding:1px;
+}
+
+span.head{
+    font-family: 'Oleo Script', cursive;
+    font-size: 150%;
+    color: white;
+    letter-spacing: 4px;
+}
+
+body  {
+	
+	background-color:#E6E6FA;
+}
+
+.img-fl{
+	float:left;
+	height:100px;
+	margin:0px 2px 2px 0px;
+}
+
+.img-sh{
+	float:left;
+	height:200px;
+	width:300px;
+	margin-right:5px;
+}
+
+.cs{
+	clear:both;
+}
+
+#wrapper {
+	background-color:#fff;
+	padding: 0px 0px 1px 0px;
+	box-shadow: 1px 2px 15px #456;
+	position: relative;
+	min-height: 600px;
+}
+
+header{
+    padding: 1px 20px 0px 0px;
+	text-align: center;
+	clear: both;
+	border-bottom: 2px solid black;
+	margin-bottom: 30px;
+	background-color:#232F3E;
+	color : #fff;
+}
+
+span.post-title{
+	font-size: 200%;
+	font-style: normal;
+}
+
+#usertrans{
+	text-transform:capitalize;
+}
+
+span.post-username{
+	font-variant:small-caps;
+}
+
+#new-pos{
+	margin-left:20px;
+}
+
+.errors{
+	background-color:#92070A;
+	color:white;
+	border-radius:5px;
+	margin-right:100px;
+	padding:1px, 0px, 0px 1px;
+
+}
+
+.links{
+	color:#fff;
+	text-decoration: none;
+}
+
+.links:hover{
+	background-color: transparent;
+	color: #34DDDD;
+	text-decoration: none;
+}
+
+.links:active {
+	color: #A64D4D;
+}
+
+.lin{
+	color:#660DB7;
+	text-decoration:none;
+}
+
+.lin:visited{
+	color: #F7BCDC;
+}
+
+.lin:hover {
+	color:#276526;
+}
+
+.lin:active{
+	color:#A64D4D;
+}
+
+.signed-in{
+	position: absolute;
+	top: 20px;
+	right: 0;
+	padding: 5px;
+}
+
+.round{
+	background-color: white;
+	border: 1px solid #d9d9d9;
+	border-radius: 25px;
+	height: 40px;
+	width: 40px;
+	overflow: hidden;
+	float:right;
+}
+
+.wid{
+	width: 100%;
+}
+
+header li{
+	display: inline;
+	font-variant: small-caps;
+}
+
+nav#left{
+	text-align: left;
+	font-size: 130%;
+}
+
+nav.right{
+	float: right;
+	clear: right;
+	font-size: 110%;
+	color:#fff;
+	position:relative;
+	top:-15px;
+}
+.hide{
+	display: none;
+}
+
+section.left{
+	width: 75%;
+	padding: 2px;
+	border-right: 2px solid black;
+}
+
+.lleft{
+	width: 95%;
+	padding: 5px;
+}
+
+section.right{
+	float: right;
+	width: 20%;
+	word-wrap: initial;
+	padding: 2px;
+	line-height: 2em;
+}
+
+section.body{
+	width: 70%;
+	border-right: 1px solid black;
+	padding: 8px;
+}
+
+article a{
+	text-decoration: none;
+}
+
+article.about{
+	margin-left:10px;
+}
+
+p#ind{
+	text-indent:120px;
+	word-spacing:1px;
+}
+
+span.rf{
+	font-size: xx-large;
+}
+
+footer{
+	margin-left:10px;
+}
+
+.not{
+	position:absolute;
+	top:120px;
+	width:100%;
+	z-index:999;
+	background-color:#107414;
+}
+
+p.notice{
+	padding:5px;
+	text-align:center;
+	margin:0px;
+	color:white;
+	letter-spacing:1px;
+}
+
+p.alert{
+	color:white;
+	background-color:#96040F;
+	width:20%;
+	padding:2px 2px 2px 4px;
+}
+	
+#error_explanation {
+	width: 400px;
+	border: 2px solid #DC031C;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 10px;
+	background-color: #D1D1D1;
+	border-radius:2px;
+}
+
+#error_explanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 15px;
+	margin: -7px;
+	background-color: #93060F;
+	color: #fff;
+}
+
+#error_explanation p {
+  	color: red;
+ 	margin-bottom: 0;
+ 	padding: 5px;
+}
+
+#error_explanation ul li {
+  	font-size: 15px;
+  	list-style: square;
+}
+
+.auth{
+	margin-left:8px;
+}
+
+.ln {
+	  border-radius: 5px;
+	  text-decoration: none;
+	  text-align:center;
+	  padding: 7px;
+	  font-size: 15px;
+	  transition: .3s;
+	  display: inline-block;
+	  width:50px auto;
+	  color:black;
+}
+
+.gr {
+	  color: #0F7313;
+	  border: 2px #0F7313 solid;
+	  background-color:white;
+}
+
+.gr:hover {
+	  color: #fff;
+	  background-color: #0F7313;
+}
+
+.grr {
+	  color: #0F7313;
+	  border: 2px #0F7313 solid;
+	  background-color:white;
+}
+
+.grr:hover {
+	  color: #fff;
+	  background-color: #0F7313;
+}
+
+.blu {
+	  color: #55acee;
+	  border: 2px #55acee solid;
+}
+
+.blu:hover {
+	  background-color: #55acee;
+	  color: #fff;
+}
+
+.pur {
+	  color: #9b59b6;
+	  border: 2px #9b59b6 solid;
+	  background-color:white;
+}
+
+.pur:hover {
+	  color: #fff;
+	  background-color: #9b59b6;
+}
+
+.darb {
+	  color: #fff;
+	  background-color:#232F3E;
+}
+
+.darb:hover {
+	  color: #fff;
+	  background-color: #890E51;
+}
+
+.lgr {
+	  color: #46A225;
+	  background-color:transparent;
+}
+
+.lgr:hover {
+	  color: #fff;
+	  background-color: #46A225;
+}
+
+.ree {
+	  color:  #B61B00;
+	  background-color:transparent;
+}
+
+.ree:hover {
+	  color: #fff;
+	  background-color: #B61B00;
+}
+
+.categ {
+	  color:  #17064A;
+	  width:120px;
+	  background-color:transparent;
+}
+
+.categ:hover {
+	  color: #fff;
+	  background-color: #17064A;
+}
+
+.none{
+		list-style-type:none;
+}
+
+.tete{
+		text-indent:-30px;
+}
+
+.round{
+	background-color: white;
+	border: 1px solid #d9d9d9;
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.imagee{
+	width: 100%;
+}

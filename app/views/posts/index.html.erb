@@ -1,0 +1,28 @@
+<article class = "lleft">
+    
+    
+   <h1><span class = "p">P</span>osts</h1> 
+    
+    <% @posts.each do |post| %>
+    
+    <div>
+    <%= link_to(:action => 'show', :id => post) do %>
+        <span  class = "lin"><i><span class = "post-title"><%= post.title.capitalize %></i></span>
+        <small>--Posted By--</small><span class = "post-username"><b><span id = "usertrans"><%= post.user.user_name %>.</span></b></span></span>
+    </div>
+    <% end %>
+        <div class = "imagee">
+        <% if post.image.file? %>
+            <p class = 'imgee'><%= image_tag post.image.url(:thumb),:class => "img-fl" %></p>
+        <%end%>
+           <p class = "postts"><%= (truncate post.body, length: 460) %>
+           <%= link_to 'Read more', post %> </p> <hr/></div>
+           
+           
+    <% end %>
+    
+</article>
+
+
+
+

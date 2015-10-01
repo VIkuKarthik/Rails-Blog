@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application','https://fonts.googleapis.com/css?family=Oleo+Script' %>
+  <%= stylesheet_link_tag 'application','https://fonts.googleapis.com/css?family=Iceberg' %>
+  <%= stylesheet_link_tag 'application','https://fonts.googleapis.com/css?family=Roboto' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+   <header>
+   	
+		<%if user_signed_in?%>
+			<div class="signed-in"><em>Signed in as
+				<%if current_user.avatar?%>
+				<div class = "round">
+					<%= image_tag(current_user.avatar.url(:thumb), :class => 'imagee') %>--</em>
+				</div>
+				<%else%>
+					<%=current_user.user_name%>
+				<%end%>
+			</div> 
+		<%end%>
+	
+	<h2><span class = "head">Blogy</span></h2>
+	<nav class = "right">
+		<ul>
+			<li><%= link_to "New Post", {:action => 'new'}, class: "links", :class => "ln darb" %> </li>
+		<% if user_signed_in? %>
+			<li><%= link_to "Sign Out",destroy_user_session_path, method: :delete, class: "links", :class => "ln darb" %></li>
+		<%else%>
+			<li><%= link_to "Sign in",new_user_session_path, class: "links", :class => "ln darb" %> </li>
+			<li><%= link_to "Sign Up" ,new_user_registration_path, class: "links", :class => "ln darb" %></li>
+		<%end%>
+		</ul>	
+	</nav>
+	<nav id = "left">
+	<ul>
+	    <li><%= link_to "Posts", posts_path, class: "links", :class => "ln darb" %> </li>
+		<li><%= link_to "Categories", categories_index_path, class: "links", :class => "ln darb" %> </li>
+	   	<li><%= link_to "About", pages_about_path, class: "links", :class => "ln darb" %></li>
+	  </ul>
+	</nav>
+	</header>
+<section class = "right">
+	<article class= "category">
+	  <h3><em><span class = "rf">C</span>ategories</em></h3>
+	  <div class ="tete">
+		  <ul class ="none">
+			 <li><%= link_to("Electronics", {:controller => 'categories', :action => 'show', :id => 2}, :class => "ln categ")%></li>
+			 <li><%= link_to("Networking", {:controller => 'categories', :action => 'show', :id => 3}, :class => "ln categ")%></li>
+		     <li><%= link_to("Programming", {:controller => 'categories', :action => 'show', :id => 1}, :class => "ln categ")%></li>
+		  </ul>
+	  </div>
+	</article>
+</section>
+	
+<% if notice %>
+	<div class = "not">
+	  <p class = "notice"><%= notice %></p>
+	</div>
+<%elsif alert%>
+      <p class = "alert"><%= alert %></p>
+<%end%> 
+  
+<section class = "left">
+	<%= yield %>
+</section>
+
+  <footer>
+		<p>A simple Rails Blog app from <strong>ViKraM.</strong></p>
+	</footer>
+
+</div>
+
+</body>
+</html>
