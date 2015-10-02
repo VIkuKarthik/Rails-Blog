@@ -17,4 +17,6 @@ A simple Blog using rails.
 
 5) Last run the server.
 
+Link to live app => <a href = "https://cryptic-earth-1536.herokuapp.com/">Live App</a>
+
 
